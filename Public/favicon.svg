@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="jcGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#FF7A30"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0A0C14"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="url(#jcGlow)" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- J Stem and Loop -->
+  <path d="M26 17v22c0 4.4-3.6 8-8 8h-1.5" fill="none" stroke="#00E5FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- C Curve -->
+  <path d="M48 24.5a13.5 13.5 0 1 0 0 19" fill="none" stroke="#FF7A30" stroke-width="5" stroke-linecap="round"/>
+  <!-- AI Sparkle accent -->
+  <polygon points="48,15 49.5,18.5 53,20 49.5,21.5 48,25 46.5,21.5 43,20 46.5,18.5" fill="#FF7A30"/>
+</svg>

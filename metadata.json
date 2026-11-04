@@ -1,0 +1,8 @@
+{
+  "name": "J-C PREMIUM HOLDING - E-Commerce Abonnements Numériques",
+  "description": "Boutique en ligne premium pour abonnements digitaux (IA, streaming, création, musique) avec paiement Mobile Money et service client WhatsApp réactif.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
