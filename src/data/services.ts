@@ -173,8 +173,8 @@ export const SERVICES_DATA: Service[] = [
     name: 'Snapchat+ Exclusif',
     category: 'music',
     iconKey: 'snapchat',
-    basePrice: 1500,
-    oldPrice: 2500,
+    basePrice: 1700,
+    oldPrice: 2000,
     duration: '1 mois',
     description: 'Badge étoile exclusif Snapchat+, possibilité de réépingler votre meilleur ami #1, aperçu des relectures de story et icônes personnalisées.',
     features: [
