@@ -4,7 +4,7 @@ export const SERVICES_DATA: Service[] = [
   // 1. Intelligence Artificielle
   {
     id: 'chatgpt',
-    name: 'ChatGPT Plus & Pro',
+    name: 'ChatGPT Plus & Pro (compte partagé)',
     category: 'ai',
     iconKey: 'chatgpt',
     basePrice: 4000,
@@ -22,13 +22,33 @@ export const SERVICES_DATA: Service[] = [
     guarantee: 'Garantie remplacement 30j',
     accountType: 'Compte partagé privé avec PIN ou dédié',
   },
+    {
+    id: 'chatgpt',
+    name: 'ChatGPT Plus & Pro (compte personnel)',
+    category: 'ai',
+    iconKey: 'chatgpt',
+    basePrice: 15000,
+    oldPrice: 16000,
+    duration: '1 mois',
+    description: 'Accès haute performance aux modèles GPT-4o, génération d\'images DALL-E, plugins et navigation web en temps réel.',
+    features: [
+      'Accès prioritaire illimité GPT-4o',
+      'Génération d\'images & analyse de fichiers',
+      'Création et usage des Custom GPTs',
+      'Disponible sur Web, iOS et Android',
+    ],
+    tag: 'Top IA',
+    deliveryTime: '15 min',
+    guarantee: 'Garantie remplacement 30j',
+    accountType: 'Compte partagé privé avec PIN ou dédié',
+  },
   {
     id: 'claude',
-    name: 'Claude Pro',
+    name: 'Claude Pro (compte partagé)',
     category: 'ai',
     iconKey: 'claude',
-    basePrice: 5000,
-    oldPrice: 7000,
+    basePrice: 4000,
+    oldPrice: 5000,
     duration: '1 mois',
     description: 'Le modèle d\'Anthropic le plus performant pour la rédaction de code complexe, l\'analyse de documents longs et la recherche.',
     features: [
@@ -42,7 +62,27 @@ export const SERVICES_DATA: Service[] = [
     guarantee: 'Garantie continue 30j',
     accountType: 'Compte activé garanti',
   },
-
+{
+    id: 'claude',
+    name: 'Claude Pro',
+    category: 'ai',
+    iconKey: 'claude',
+    basePrice: 15000,
+    oldPrice: 16000,
+    duration: '1 mois',
+    description: 'Le modèle d\'Anthropic le plus performant pour la rédaction de code complexe, l\'analyse de documents longs et la recherche.',
+    features: [
+      '5x plus d\'utilisation que la version gratuite',
+      'Fenêtre de contexte géante (200K tokens)',
+      'Accès prioritaire en heures de pointe',
+      'Idéal pour développeurs et chercheurs',
+    ],
+    tag: 'Productivité',
+    deliveryTime: '20 min',
+    guarantee: 'Garantie continue 30j',
+    accountType: 'Compte activé garanti',
+  },
+  
   // 2. Design & Création
   {
     id: 'canva',
