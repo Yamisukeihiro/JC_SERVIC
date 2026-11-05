@@ -33,7 +33,7 @@ export const FAQSection: React.FC = () => {
         borderColor: isDarkMode ? 'rgba(245, 235, 221, 0.12)' : 'rgba(43, 42, 42, 0.12)',
       }}
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <span
             className="text-xs font-black tracking-widest uppercase block mb-1"
