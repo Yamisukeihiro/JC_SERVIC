@@ -64,7 +64,7 @@ export const SERVICES_DATA: Service[] = [
   },
  {
     id: 'claude',
-    name: 'Claude Pro',
+    name: 'Claude Pro (compte personnel)',
     category: 'ai',
     iconKey: 'claude',
     basePrice: 15000,
