@@ -37,28 +37,47 @@ export const PrimeVideoIcon: React.FC<IconProps> = ({ className = 'w-6 h-6', siz
     height={size}
     className={className}
     fill="none"
-    aria-label="Prime Video logo"
+    role="img"
+    aria-label="Prime Video"
   >
     <rect width="24" height="24" rx="5" fill="#00A8E1" />
-    <path
-      d="M4.5 12.8c2.8 2 6.8 2.9 10.3 1.3 1.6-.7 3.3-1.9 4.7-3.4-.2-.1-.5-.2-.8-.1-1.2.6-2.6 1.1-4 1.3-3.2.4-6.8-.4-9.5-2.2-.3-.2-.5 0-.7.2-.1.2 0 .5.3.7z"
-      fill="#ffffff"
-    />
-    <path
-      d="M19.7 10.6c.4-.6.8-1.5 1-2.4 0-.2-.1-.4-.3-.4-.8.2-1.7.5-2.4.9-.2.1-.2.4 0 .5.5.4 1.1.9 1.7 1.4z"
-      fill="#ffffff"
-    />
     <text
-      x="5"
-      y="11"
-      fill="#ffffff"
-      fontFamily="sans-serif"
-      fontWeight="900"
-      fontSize="7"
-      letterSpacing="-0.5"
+      x="12"
+      y="10.8"
+      fill="#FFFFFF"
+      fontFamily="Arial, sans-serif"
+      fontSize="5.1"
+      fontWeight="700"
+      textAnchor="middle"
+      letterSpacing="-0.2"
     >
       prime
     </text>
+    <text
+      x="12"
+      y="15.2"
+      fill="#FFFFFF"
+      fontFamily="Arial, sans-serif"
+      fontSize="4.3"
+      fontWeight="700"
+      textAnchor="middle"
+      letterSpacing="-0.15"
+    >
+      video
+    </text>
+    <path
+      d="M7.3 17.2c3.1 1.7 6.7 1.7 9.5-.1"
+      stroke="#FFFFFF"
+      strokeWidth="1"
+      strokeLinecap="round"
+    />
+    <path
+      d="m15.7 16.3 1.4.7-1.1 1"
+      stroke="#FFFFFF"
+      strokeWidth="0.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
