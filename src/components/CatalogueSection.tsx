@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ShoppingBag, Eye, Check, ExternalLink, X, Flame, Filter, SlidersHorizontal } from 'lucide-react';
+import { Search, ShoppingBag, Eye, Check, ExternalLink, X, Flame } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { SERVICES_DATA, formatFCFA } from '../data/services';
 import { Service, ServiceCategory } from '../types';
@@ -16,32 +16,30 @@ export const CatalogueSection: React.FC = () => {
     { id: 'design', label: 'Design & Création', keywords: ['design', 'video', 'graphisme', 'canva', 'capcut', 'montage', 'photo', 'watermark'] },
     { id: 'streaming', label: 'Streaming & Cinéma', keywords: ['streaming', 'cinema', 'film', 'serie', 'netflix', 'prime', 'iptv', 'tv', '4k', 'uhd'] },
     { id: 'music', label: 'Musique & Social', keywords: ['musique', 'music', 'audio', 'spotify', 'son', 'snapchat', 'social', 'reseaux'] },
+    { id: 'accessories', label: 'Accessoires', keywords: ['airpods', 'ecouteurs', 'bluetooth', 'chargeur', 'cable', 'accessoire', 'apple'] },
+    { id: 'storage', label: 'Stockage & Sécurité', keywords: ['stockage', 'securite', 'cloud', 'google', 'vpn', 'nord', 'icloud', 'drive'] },
+    { id: 'training', label: 'Formation', keywords: ['formation', 'apprentissage', 'langue', 'duolingo', 'cours'] },
+    { id: 'office', label: 'Bureautique & Organisation', keywords: ['bureautique', 'notion', 'office', 'excel', 'powerpoint', 'cursor', 'organisation'] },
     { id: 'packs', label: 'Packs Spéciaux', keywords: ['pack', 'bundle', 'combo', 'promo', 'economie', 'reduction'] },
   ];
 
-  // Quick suggestions for one-click search
-  const popularKeywords = ['Netflix 4K', 'ChatGPT', 'Canva Pro', 'IPTV Direct', 'Pack Cinéma', 'Spotify'];
+  const popularKeywords = ['Netflix 4K', 'ChatGPT', 'Canva Pro', 'IPTV Direct', 'AirPods Pro', 'Google One', 'Notion Business', 'Cursor Pro'];
 
-  // Smart Multi-Criteria Search & Filter Logic
   const filteredServices = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
 
     return SERVICES_DATA.filter((service) => {
-      // 1. Category Matching
       let matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
 
-      // If user typed a search query, smart detect if the query refers to a category
       if (query) {
         const matchingCategoryTab = categoryTabs.find(
           (t) => t.id !== 'all' && (t.label.toLowerCase().includes(query) || t.keywords.some((kw) => query.includes(kw)))
         );
-        // If query specifically targets a category name (e.g. "IA", "Streaming"), include that category even if not selected
         if (matchingCategoryTab && service.category === matchingCategoryTab.id) {
           matchesCategory = true;
         }
       }
 
-      // 2. Text Search Matching across name, category, description, features, and tags
       if (!query) {
         return matchesCategory;
       }
@@ -74,7 +72,6 @@ export const CatalogueSection: React.FC = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* En-tête de section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -108,7 +105,6 @@ export const CatalogueSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Barre de Recherche Intelligente */}
           <div className="w-full md:w-96 space-y-2">
             <div className="relative">
               <Search
@@ -148,7 +144,6 @@ export const CatalogueSection: React.FC = () => {
               )}
             </div>
 
-            {/* Compteur de résultats en direct */}
             <div className="flex items-center justify-between text-[11px] font-bold px-1">
               <span style={{ color: isDarkMode ? '#C4B9AA' : '#696360' }}>
                 {filteredServices.length}{' '}
@@ -170,7 +165,6 @@ export const CatalogueSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Suggestions rapides en 1 clic */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-2 mb-6 no-scrollbar">
           <span
             className="text-[11px] font-black uppercase tracking-wider whitespace-nowrap mr-1 flex items-center gap-1"
@@ -209,7 +203,6 @@ export const CatalogueSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Boutons d'onglets catégories */}
         <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-10 no-scrollbar">
           {categoryTabs.map((tab) => {
             const isActive = selectedCategory === tab.id;
@@ -220,11 +213,7 @@ export const CatalogueSection: React.FC = () => {
                 onClick={() => setSelectedCategory(tab.id)}
                 className="px-4 py-2.5 rounded-xl text-xs font-black whitespace-nowrap transition-all cursor-pointer shadow-2xs"
                 style={{
-                  backgroundColor: isActive
-                    ? '#FF7A30'
-                    : isDarkMode
-                    ? '#343333'
-                    : '#FFFFFF',
+                  backgroundColor: isActive ? '#FF7A30' : isDarkMode ? '#343333' : '#FFFFFF',
                   color: isActive ? '#FFFFFF' : isDarkMode ? '#F5EBDD' : '#2B2A2A',
                   border: isActive
                     ? '1px solid #FF7A30'
@@ -239,7 +228,6 @@ export const CatalogueSection: React.FC = () => {
           })}
         </div>
 
-        {/* Grille de cartes de service */}
         {filteredServices.length === 0 ? (
           <div
             className="py-16 text-center rounded-3xl border p-8 space-y-3"
@@ -283,7 +271,6 @@ export const CatalogueSection: React.FC = () => {
                 }}
               >
                 <div>
-                  {/* Top card row: Logo & Tag */}
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <BrandIconBadge iconKey={service.iconKey} size="lg" />
                     {service.tag && (
@@ -300,7 +287,6 @@ export const CatalogueSection: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Title & Account info */}
                   <div className="space-y-1 mb-3">
                     <h3
                       className="text-lg font-black tracking-tight transition-colors"
@@ -316,7 +302,6 @@ export const CatalogueSection: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Description */}
                   <p
                     className="text-xs font-medium leading-relaxed mb-4 line-clamp-2"
                     style={{ color: isDarkMode ? '#C4B9AA' : '#5A5451' }}
@@ -324,7 +309,6 @@ export const CatalogueSection: React.FC = () => {
                     {service.description}
                   </p>
 
-                  {/* Feature Highlights */}
                   <ul className="space-y-2 mb-6 text-xs">
                     {service.features.slice(0, 3).map((feat, idx) => (
                       <li
@@ -344,7 +328,6 @@ export const CatalogueSection: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Bottom Card: Pricing & Actions */}
                 <div
                   className="pt-5 border-t"
                   style={{ borderColor: isDarkMode ? 'rgba(245, 235, 221, 0.1)' : 'rgba(43, 42, 42, 0.1)' }}
@@ -377,7 +360,6 @@ export const CatalogueSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="grid grid-cols-2 gap-2.5">
                     <button
                       type="button"

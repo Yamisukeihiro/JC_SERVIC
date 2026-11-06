@@ -1,10 +1,33 @@
-export type ServiceCategory = 'all' | 'ai' | 'design' | 'streaming' | 'music' | 'packs';
+export type ServiceCategory = 'all' | 'ai' | 'design' | 'streaming' | 'music' | 'packs' | 'accessories' | 'storage' | 'training' | 'office';
 
 export interface Service {
   id: string;
   name: string;
-  category: 'ai' | 'design' | 'streaming' | 'music' | 'packs';
-  iconKey: 'netflix' | 'prime' | 'chatgpt' | 'claude' | 'canva' | 'capcut' | 'spotify' | 'snapchat' | 'iptv' | 'pack-cinema' | 'pack-crea' | 'pack-ia';
+  category: 'ai' | 'design' | 'streaming' | 'music' | 'packs' | 'accessories' | 'storage' | 'training' | 'office';
+  iconKey:
+    | 'netflix'
+    | 'prime'
+    | 'chatgpt'
+    | 'claude'
+    | 'canva'
+    | 'capcut'
+    | 'spotify'
+    | 'snapchat'
+    | 'iptv'
+    | 'pack-cinema'
+    | 'pack-crea'
+    | 'pack-ia'
+    | 'airpods'
+    | 'earbuds'
+    | 'charger'
+    | 'cable'
+    | 'google-one'
+    | 'nordvpn'
+    | 'icloud'
+    | 'duolingo'
+    | 'notion'
+    | 'microsoft-office'
+    | 'cursor';
   basePrice: number; // in FCFA
   oldPrice?: number;
   duration: string;
