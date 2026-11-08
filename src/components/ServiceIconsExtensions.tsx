@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  siApple,
   siCursor,
   siDuolingo,
   siGoogle,
@@ -38,7 +37,23 @@ const SimpleBrandIcon: React.FC<IconProps & { icon: SimpleIconData }> = ({
   </svg>
 );
 
-export const AirPodsIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siApple} {...props} />;
+const AIRPODS_IMAGE_URL =
+  'https://upload.wikimedia.org/wikipedia/commons/7/71/AirPods.svg';
+
+/** AirPods product illustration from Wikimedia Commons (CC0 1.0). */
+export const AirPodsIcon: React.FC<IconProps> = ({ className = 'w-6 h-6', size }) => (
+  <img
+    src={AIRPODS_IMAGE_URL}
+    width={size}
+    height={size}
+    className={className}
+    alt="AirPods"
+    role="img"
+    loading="lazy"
+    decoding="async"
+  />
+);
+
 export const GoogleOneIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siGoogle} {...props} />;
 export const NordVPNIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siNordvpn} {...props} />;
 export const ICloudIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siIcloud} {...props} />;
@@ -65,6 +80,7 @@ export const MicrosoftOfficeIcon: React.FC<IconProps> = ({ className = 'w-6 h-6'
 const addedIcons: Record<string, React.FC<IconProps>> = {
   airpods: AirPodsIcon,
   'google-one': GoogleOneIcon,
+  google: GoogleOneIcon,
   nordvpn: NordVPNIcon,
   icloud: ICloudIcon,
   duolingo: DuolingoIcon,
