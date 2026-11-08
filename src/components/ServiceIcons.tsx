@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  siApple,
+  siCursor,
+  siDuolingo,
+  siGoogle,
+  siIcloud,
+  siNordvpn,
+  siNotion,
+} from 'simple-icons';
 
 interface IconProps {
   className?: string;
@@ -343,6 +352,53 @@ export const MtnMomoIcon: React.FC<IconProps> = ({ className = 'w-6 h-6', size }
   </svg>
 );
 
+interface SimpleIconData {
+  title: string;
+  hex: string;
+  path: string;
+}
+
+const SimpleBrandIcon: React.FC<IconProps & { icon: SimpleIconData }> = ({
+  className = 'w-6 h-6',
+  size,
+  icon,
+}) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    role="img"
+    aria-label={`${icon.title} logo`}
+  >
+    <path d={icon.path} fill={`#${icon.hex}`} />
+  </svg>
+);
+
+export const AirPodsIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siApple} {...props} />;
+export const GoogleOneIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siGoogle} {...props} />;
+export const NordVPNIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siNordvpn} {...props} />;
+export const ICloudIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siIcloud} {...props} />;
+export const DuolingoIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siDuolingo} {...props} />;
+export const NotionIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siNotion} {...props} />;
+export const CursorIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siCursor} {...props} />;
+
+export const MicrosoftOfficeIcon: React.FC<IconProps> = ({ className = 'w-6 h-6', size }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    role="img"
+    aria-label="Microsoft Office logo"
+  >
+    <path fill="#F25022" d="M1 1h10.5v10.5H1z" />
+    <path fill="#7FBA00" d="M12.5 1H23v10.5H12.5z" />
+    <path fill="#00A4EF" d="M1 12.5h10.5V23H1z" />
+    <path fill="#FFB900" d="M12.5 12.5H23V23H12.5z" />
+  </svg>
+);
+
 /**
  * Pack Bundle Icons
  */
@@ -436,6 +492,22 @@ export const BrandIconBadge: React.FC<BrandIconBadgeProps> = ({
         return <MoovMoneyIcon className="w-full h-full object-contain" />;
       case 'mtn':
         return <MtnMomoIcon className="w-full h-full object-contain" />;
+      case 'airpods':
+        return <AirPodsIcon className="w-full h-full object-contain" />;
+      case 'google-one':
+        return <GoogleOneIcon className="w-full h-full object-contain" />;
+      case 'nordvpn':
+        return <NordVPNIcon className="w-full h-full object-contain" />;
+      case 'icloud':
+        return <ICloudIcon className="w-full h-full object-contain" />;
+      case 'duolingo':
+        return <DuolingoIcon className="w-full h-full object-contain" />;
+      case 'notion':
+        return <NotionIcon className="w-full h-full object-contain" />;
+      case 'microsoft-office':
+        return <MicrosoftOfficeIcon className="w-full h-full object-contain" />;
+      case 'cursor':
+        return <CursorIcon className="w-full h-full object-contain" />;
       case 'pack-cinema':
         return <PackCinemaIcon className="w-full h-full" />;
       case 'pack-crea':
