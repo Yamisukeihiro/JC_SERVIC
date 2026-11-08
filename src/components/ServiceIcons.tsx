@@ -383,6 +383,33 @@ export const DuolingoIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon ico
 export const NotionIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siNotion} {...props} />;
 export const CursorIcon: React.FC<IconProps> = (props) => <SimpleBrandIcon icon={siCursor} {...props} />;
 
+export const Microsoft365Icon: React.FC<IconProps> = ({ className = 'w-6 h-6', size }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    role="img"
+    aria-label="Microsoft 365 logo"
+  >
+    <rect x="1.1" y="1.1" width="8.2" height="8.2" rx="1.4" fill="#F25022" />
+    <rect x="10.7" y="1.1" width="8.2" height="8.2" rx="1.4" fill="#7FBA00" />
+    <rect x="1.1" y="10.7" width="8.2" height="8.2" rx="1.4" fill="#00A4EF" />
+    <rect x="10.7" y="10.7" width="8.2" height="8.2" rx="1.4" fill="#FFB900" />
+    <text
+      x="12"
+      y="15.8"
+      fill="#FFFFFF"
+      fontFamily="Segoe UI, Arial, sans-serif"
+      fontSize="4.4"
+      fontWeight="700"
+      textAnchor="middle"
+    >
+      365
+    </text>
+  </svg>
+);
+
 /**
  * Pack Bundle Icons
  */
@@ -490,6 +517,11 @@ export const BrandIconBadge: React.FC<BrandIconBadgeProps> = ({
         return <NotionIcon className="w-full h-full object-contain" />;
       case 'cursor':
         return <CursorIcon className="w-full h-full object-contain" />;
+      case 'microsoft':
+      case 'microsoft-365':
+      case 'microsoft365':
+      case 'microsoft-office':
+        return <Microsoft365Icon className="w-full h-full object-contain" />;
       case 'pack-cinema':
         return <PackCinemaIcon className="w-full h-full" />;
       case 'pack-crea':
